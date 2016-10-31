@@ -1,0 +1,110 @@
+
+// *** Variables ***
+//
+// Change these variables to override Bootstrap defaults.
+
+// *** Table of Contents ***
+//
+// Colors
+// Options
+// Spacing
+// Body
+// Links
+// Topography
+// Components
+
+
+// *** Colors ***
+//
+// Grayscale and brand colors for use across Bootstrap.
+
+//$gray-dark:	                   #373a3c;	
+//$gray:	                       #55595c;
+//$gray-light:	                   #818a91;
+//$gray-lighter:	               #eceeef;
+//$gray-lightest:	               #f7f7f9;				
+
+$brand-primary:                    #16a085;	
+//$brand-success:                  #      ;
+//$brand-info:                     #      ;
+//$brand-warning:                  #      ;
+//$brand-danger:                   #      ;
+//$brand-inverse:                  #      ;
+
+
+// *** Options ***
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-rounded:					true;
+$enable-shadows:					false;
+$enable-gradients:					false;
+$enable-transitions:				false;
+
+
+// *** Spacing ***
+//
+// Control the default spacing.
+
+$spacer:							1rem;
+$border-width:						1px;
+
+
+// *** Body ***
+//
+// settings for the <body> element
+
+//$body-bg:                          #white;
+//$body-color:                       $gray-dark;
+
+
+// *** Links ***
+//
+// Style anchor elements.
+
+//$link-color:						$brand-primary;
+//$link-decoration:					none;
+//$link-hover-color:				darken($link-color, 15%);
+//$link-hover-decoration:			underline;
+
+
+// *** Nav Bar ***
+//
+// Style nav elements.
+
+//$navbar-default-bg:                white;
+$navbar-default-brand-color:       #16a085;
+//$navbar-height:                    50px;			
+
+.navbar-brand {
+     font-weight: bold;
+}
+
+
+// *** Jumbotron ***
+//
+// Style Jumbotron elements.
+
+//$jumbotron-bg:                     white;
+
+
+
+// *** Typography ***
+//
+// Font, line-height, and color for body text, headings, and more.
+
+
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+
+$font-family-sans-serif:           'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+
+.center {
+     text-align: center;
+}
+
+
+// *** Components ***
+//
+// TBD.
+
