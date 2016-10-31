@@ -10,6 +10,8 @@
 // Spacing
 // Body
 // Links
+// NavBar
+// Container
 // Topography
 // Components
 
@@ -80,6 +82,14 @@ $navbar-default-brand-color:       #16a085;
      font-weight: bold;
 }
 
+
+// *** Nav Bar ***
+//
+// Style nav elements.
+
+.container-padded {
+     padding-top: 1em;
+}
 
 // *** Jumbotron ***
 //

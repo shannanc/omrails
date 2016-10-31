@@ -1,8 +1,8 @@
-<div class="container">
-	<h1>Editing Tweet</h1>
-
-	<%= render 'form', tweet: @tweet %>
-
-	<%= link_to 'Show', @tweet %> |
-	<%= link_to 'Back', tweets_path %>
+<div class="container container-padded">
+    <div class="offset-md-2 col-md-8">
+		<h4>Edit Tweet</h1>
+		<%= render 'form', tweet: @tweet %>
+		<%= link_to 'Show', @tweet %> |
+		<%= link_to 'Back', tweets_path %>
+	</div>
 </div>
