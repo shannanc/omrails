@@ -14,9 +14,27 @@
             <p class="card-text"><%= current_user.email %></p>
             <%= link_to 'New Tweet', new_tweet_path %>
           </div>
+          
+          <div class="card-footer text-muted">
+            <small><%= DateTime.now %></small>
+          </div>
+
 
         <% else %>
-            <%= link_to "Sign In", signin_path , class: "btn btn-primary btn-sm" %>
+
+
+          <div class="card-header">
+            <h6>Sign In our Sign Up!</h6>
+          </div>
+
+          <div class="card card-block">
+            <p class="card-text">Join the dialog!  Sign in and Join the Dialog!  Let you voice be seen!</p>
+          </div>
+
+          <div class="card-footer text-muted">
+            <small><%= link_to "Sign In", signin_path , class: "btn btn-primary btn-sm" %></small>
+          </div>
+
         <% end %>
 
     </div>
