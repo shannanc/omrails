@@ -15,7 +15,7 @@
 
 				<!-- CARD FOOTER -->
 				<div class="card-footer text-muted">
-					<small><%= @tweet.created_at %></small>
+					<small><%= time_ago_in_words(@tweet.created_at) %></small>
 				</div>
 		  </div>
 		</div>

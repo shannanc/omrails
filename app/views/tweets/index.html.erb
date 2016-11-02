@@ -6,35 +6,42 @@
   
       <% if user_signed_in? %>
        
-          <div class="card-header">
-            <h6>Your Account:</h6>
-          </div>
+          <div class="card">   
 
-          <div class="card card-block">
-            <p class="card-text"><%= current_user.email %></p>
-            <%= link_to 'New Tweet', new_tweet_path %>
-          </div>
+            <div class="card-header">
+              <h6>Your Account:</h6>
+            </div>
 
-          <div class="card-footer text-muted">
-            <small><%= DateTime.now %></small>
+            <div class="card card-block">
+              <p class="card-text"><%= current_user.email %></p>
+              <%= link_to 'New Tweet', new_tweet_path %>
+            </div>
+
+            <div class="card-footer text-muted">
+              <small><%= DateTime.now %></small>
+            </div>
+
           </div>
 
 
         <% else %>
 
+          <div class="card">  
 
-          <div class="card-header">
-            <h6>Sign In or Sign Up!</h6>
+            <div class="card-header">
+              <h6>Sign In or Sign Up!</h6>
+            </div>
+
+            <div class="card card-block">
+              <p class="card-text">Let your voice be seen...<br> Join the dialog! </p>
+            </div>
+
+            <div class="card-footer text-muted">
+              <small><%= link_to "Sign In", signin_path , class: "btn btn-primary btn-sm" %></small>
+            </div>
+
           </div>
-
-          <div class="card card-block">
-            <p class="card-text">Join the dialog! Let you voice be seen!</p>
-          </div>
-
-          <div class="card-footer text-muted">
-            <small><%= link_to "Sign In", signin_path , class: "btn btn-primary btn-sm" %></small>
-          </div>
-
+        
         <% end %>
 
     </div>
@@ -60,23 +67,20 @@
           </div>
           
           <ul class="list-group">
-            
-            <%= link_to tweet, class: "list-group-item list-group-item-action" do %>
+  
+              <%= link_to tweet, class: "list-group-item list-group-item-action" do %>
 
-            <div class="card-block">
-
-              <!-- <h4 class="card-title"><%= tweet.user.email %></h4> -->
-              <p class="card-text"><%= tweet.content %></p>
-              <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-            </div>
+              <div class="card-block">
+                <p class="card-text"><%= tweet.content %></p>
+              </div>
 
             <% end %>
-
           </ul>
 
           <div class="card-footer text-muted">
-            <small><%= tweet.created_at %></small>
+            <small><%= time_ago_in_words(tweet.created_at) %></small>
           </div>
+
         </div>
 
       <% end %>
