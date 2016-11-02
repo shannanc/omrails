@@ -14,7 +14,7 @@
             <p class="card-text"><%= current_user.email %></p>
             <%= link_to 'New Tweet', new_tweet_path %>
           </div>
-          
+
           <div class="card-footer text-muted">
             <small><%= DateTime.now %></small>
           </div>
@@ -24,11 +24,11 @@
 
 
           <div class="card-header">
-            <h6>Sign In our Sign Up!</h6>
+            <h6>Sign In or Sign Up!</h6>
           </div>
 
           <div class="card card-block">
-            <p class="card-text">Join the dialog!  Sign in and Join the Dialog!  Let you voice be seen!</p>
+            <p class="card-text">Join the dialog! Let you voice be seen!</p>
           </div>
 
           <div class="card-footer text-muted">
@@ -47,8 +47,7 @@
           <div class="card-header">
             <ul class="nav navbar-nav">
                       
-                  <!-- <li class="nav-item"><%= link_to 'Show', tweet %></li> -->
-                  <li class="nav-item"><%= tweet.user.email %></li>
+                   <li class="nav-item"><%= tweet.user.email %></li>
 
                   <% if tweet.user == current_user %>
 

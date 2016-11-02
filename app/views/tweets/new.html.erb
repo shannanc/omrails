@@ -1,7 +1,23 @@
 <div class="container container-padded">
-    <div class="offset-md-2 col-md-8">
-		<h4>New Tweet</h1>
-		<%= render 'form', tweet: @tweet %>
-		<%= link_to 'Back', tweets_path %>
+    <div class="row"> 
+    	<div class="offset-md-2 col-md-8">
+	    	<div class="card">      
+		    	<!-- CARD HEADER -->
+		    	<div class="card-header">
+		    	 	<ul class="nav navbar-nav">
+		    	 		<li class="nav-item"><%= @tweet.user.email %></li>
+	    				<li class="nav-item"><%= link_to 'Back', tweets_path %></li>
+			    		</ul>
+		    	</div>
+
+		    	<!-- CARD BLOCK -->
+				<%= render 'form', tweet: @tweet %>
+
+				<!-- CARD FOOTER -->
+				<div class="card-footer text-muted">
+					<small><%= @tweet.created_at %></small>
+				</div>
+		  </div>
+		</div>
 	</div>
-</div>		
+</div>

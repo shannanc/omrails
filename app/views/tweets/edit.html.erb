@@ -1,8 +1,28 @@
 <div class="container container-padded">
-    <div class="offset-md-2 col-md-8">
-		<h4>Edit Tweet</h1>
-		<%= render 'form', tweet: @tweet %>
-		<%= link_to 'Show', @tweet %> |
-		<%= link_to 'Back', tweets_path %>
+    <div class="row"> 
+    	<div class="offset-md-2 col-md-8">
+	    	<div class="card">      
+		    	<!-- CARD HEADER -->
+		    	<div class="card-header">
+		    	 	<ul class="nav navbar-nav">
+		    	 		<li class="nav-item"><%= @tweet.user.email %></li>
+		    			<!-- If you own the tweet then you can delete or edit -->
+		    			<% if @tweet.user == current_user %>
+		    				<li class="nav-item"><%= link_to 'Show', @tweet %></li>
+		    				<li class="nav-item"><%= link_to 'Back', tweets_path %></li>
+		    				<li class="nav-item"><%= link_to 'Delete', @tweet, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+		    			<% end %>
+		    		</ul>
+		    	</div>
+
+		    	<!-- CARD BLOCK -->
+				<%= render 'form', tweet: @tweet %>
+
+				<!-- CARD FOOTER -->
+				<div class="card-footer text-muted">
+					<small><%= @tweet.created_at %></small>
+				</div>
+		  </div>
+		</div>
 	</div>
 </div>
