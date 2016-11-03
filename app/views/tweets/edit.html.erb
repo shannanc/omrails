@@ -1,17 +1,12 @@
 <div class="container container-padded">
     <div class="row"> 
     	<div class="offset-md-2 col-md-8">
+	    	<!-- CARD -->
 	    	<div class="card">      
 		    	<!-- CARD HEADER -->
 		    	<div class="card-header">
 		    	 	<ul class="nav navbar-nav">
-		    	 		<li class="nav-item"><%= @tweet.user.email %></li>
-		    			<!-- If you own the tweet then you can delete or edit -->
-		    			<% if @tweet.user == current_user %>
-		    				<li class="nav-item"><%= link_to 'Show', @tweet %></li>
-		    				<li class="nav-item"><%= link_to 'Back', tweets_path %></li>
-		    				<li class="nav-item"><%= link_to 'Delete', @tweet, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-		    			<% end %>
+		    	 		<li class="nav-item"><%= @tweet.user.email %> | <small><%= time_ago_in_words(@tweet.created_at) %></small></li>
 		    		</ul>
 		    	</div>
 
@@ -20,7 +15,13 @@
 
 				<!-- CARD FOOTER -->
 				<div class="card-footer text-muted">
-					<small><%= time_ago_in_words(@tweet.created_at) %></small>
+				 	<ul class="nav navbar-nav">
+						<!-- If you own the tweet then you can delete or edit -->
+						<% if @tweet.user == current_user %>
+							<li class="nav-item"><%= link_to 'Back', tweets_path %></li>
+							<li class="nav-item"><%= link_to 'Delete', @tweet, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+						<% end %>
+					</ul>
 				</div>
 		  </div>
 		</div>
