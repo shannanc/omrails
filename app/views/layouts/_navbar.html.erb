@@ -1,39 +1,33 @@
+<!-- <nav class="navbar navbar-dark bg-inverse"> -->
+
 <nav class="navbar navbar-static-top navbar-dark bg-inverse" role="navigation">
   
   <div class="container">
 
-      <!-- NAVE HEADER LEFT -->
-      <div class="navbar-header pull-left">
-      <!-- Allways SHOW -->
-      <%= link_to "One Month Rails", root_path, class: "navbar-brand" %>
-        <ul class="nav navbar-nav">
-          <li class="nav-item"><%= link_to "Home", root_path, class: "nav-link" %></li>
-          <li class="nav-item"><%= link_to "About", about_path, class: "nav-link" %></li>
-          <li class="nav-item"><%= link_to "Contact", contact_path, class: "nav-link" %></li> 
-          <li class="nav-item"><%= link_to "Tweets", tweets_path, class: "nav-link" %></li>
-        </ul>
-      </div>
+    <!-- Allways SHOW -->
+    <%= link_to "One Month Rails", root_path, class: "navbar-brand" %>
+    <ul class="nav navbar-nav">
+      <li class="nav-item"><%= link_to "Home", root_path, class: "nav-link" %></li>
+      <li class="nav-item"><%= link_to "About", about_path, class: "nav-link" %></li>
+      <li class="nav-item"><%= link_to "Contact", contact_path, class: "nav-link" %></li> 
+      <li class="nav-item"><%= link_to "Tweets", tweets_path, class: "nav-link" %></li>
 
+      <!-- TOGGLE Sign In / Sign Out / Sign Up -->
+      <% if user_signed_in? %>
+        <li class="nav-item pull-md-right"><%= link_to "Sign Out", signout_path, method: :delete, class: "nav-link" %></li>  
 
-      <div class="navbar-header pull-right">
-        <!-- TOGGLE Sign In / Sign Out / Sign Up -->
-        <ul class="nav navbar-nav">
-          <% if user_signed_in? %>
-            <li class="nav-item pull-md-right"><%= link_to "Sign Out", signout_path, method: :delete, class: "nav-link" %></li>  
+         <li class="nav-item nav-link pull-md-right "><%=current_user.email%></li> 
+      
+      <% else %>
+        <li class="nav-item pull-md-right"><%= link_to "Sign Up", signup_path, class: "btn btn-primary" %></li> 
+        <li class="nav-item pull-md-right"><%= link_to "Sign In", signin_path, class: "nav-link" %></li>
+      <% end %>
 
-             <li class="nav-item nav-link pull-md-right "><%=current_user.email%></li> 
-          
-          <% else %>
-            <li class="nav-item pull-md-right"><%= link_to "Sign Up", signup_path, class: "btn btn-primary" %></li> 
-            <li class="nav-item pull-md-right"><%= link_to "Sign In", signin_path, class: "nav-link" %></li>
-          <% end %>
+      <!-- SHOW Admin Dashboard if Admin -->
+      <% if user_signed_in? && current_user.admin %>
+        <li class="nav-item pull-md-right"><%= link_to "Dashboard", admin_dashboard_path, class: "nav-link" %></li>
+      <% end %>        
 
-          <!-- SHOW Admin Dashboard if Admin -->
-          <% if user_signed_in? && current_user.admin %>
-            <li class="nav-item pull-md-right"><%= link_to "Dashboard", admin_dashboard_path, class: "nav-link" %></li>
-          <% end %>        
-        </ul>
-  
-
+    </ul>
   </div>
 </nav>
