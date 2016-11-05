@@ -14,7 +14,10 @@
 
       <!-- TOGGLE Sign In / Sign Out / Sign Up -->
       <% if user_signed_in? %>
-        <li class="nav-item pull-md-right"><%= link_to "Sign Out", signout_path, method: :delete, class: "nav-link" %></li>   
+        <li class="nav-item pull-md-right"><%= link_to "Sign Out", signout_path, method: :delete, class: "nav-link" %></li>  
+
+         <li class="nav-item nav-link pull-md-right "><%=current_user.email%></li> 
+      
       <% else %>
         <li class="nav-item pull-md-right"><%= link_to "Sign Up", signup_path, class: "btn btn-primary" %></li> 
         <li class="nav-item pull-md-right"><%= link_to "Sign In", signin_path, class: "nav-link" %></li>
